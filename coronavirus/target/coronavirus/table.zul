@@ -1,0 +1,42 @@
+<zk>
+    <window apply="org.zkoss.bind.BindComposer"
+        viewModel="@id('vm') @init('coronavirus.viewmodel.CountryStatisticsViewModel')">
+        
+        Estadisticas del coronavirus
+        <separator />
+        <grid height="350px" model="@load(vm.data.statistics)"
+            emptyMessage="No hay datos.">
+            <columns>
+                <column label="Pais" width="200px"/>
+                <column label="Casos totales" width="140px" />
+                <column label="Nuevos casos" width="140px" />
+                <column label="Muertes totales" width="140px" />
+                <column label="Nuevas muertes" width="140px" />
+                <column label="Total recuperados" width="140px" />
+                <column label="Casos activos" width="140px" />
+                <column label="Casos criticos" width="140px" />
+            </columns>
+            <template name="model">
+                <row>
+                	<label value="@load(each.country)" />                    
+                    <label value="@load(each.totalCases)" />
+                    <label value="@load(each.newCases)" />
+                    <label value="@load(each.totalDeaths)" />
+                    <label value="@load(each.newDeaths)" />
+                    <label value="@load(each.totalRecovered)" />
+                    <label value="@load(each.activeCases)" />
+                    <label value="@load(each.seriousCriticalCases)" />
+                </row>
+            </template>
+        </grid>
+         
+    </window>
+    
+    <window apply="coronavirus.composer.Pie3DComposer">
+    	<charts id="chart" type="pie" title="Expansión actual del coronavirus" />
+	</window>
+	
+	<window apply="coronavirus.composer.BarStackedComposer">
+    <charts id="chart" type="bar" title="Stacked bar chart"/>
+</window>
+</zk>

@@ -1,0 +1,7 @@
+coronavirus/composer/BarStackedComposer.class
+coronavirus/data/BarStackedData.class
+coronavirus/viewmodel/CountryStatisticsViewModel.class
+coronavirus/controller/CountryStatisticsController.class
+coronavirus/model/CountryStatistic.class
+coronavirus/composer/Pie3DComposer.class
+coronavirus/data/CountryStatsData.class
